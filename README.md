@@ -1,8 +1,8 @@
-# Android Project 1 - *Name of App Here*
+# Android Project 1 - *Wordle*
 
-Submitted by: **Your Name Here**
+Submitted by: **Ekechi Spencer**
 
-**Name of your app** is an android app that recreates a simple version of the popular word game [Wordle](https://www.nytimes.com/games/wordle/index.html). 
+**Wordle** is an android app that recreates a simple version of the popular word game [Wordle](https://www.nytimes.com/games/wordle/index.html). 
 
 Time spent: **X** hours spent in total
 
@@ -32,7 +32,8 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![image](https://github.com/user-attachments/assets/87a3d1b2-90ff-4140-bd69-f101883fbc9b)
+
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
