@@ -4,7 +4,7 @@ Submitted by: **Ekechi Spencer**
 
 **Wordle** is an android app that recreates a simple version of the popular word game [Wordle](https://www.nytimes.com/games/wordle/index.html). 
 
-Time spent: **X** hours spent in total
+Time spent: **5** hours spent in total
 
 ## Required Features
 
@@ -32,19 +32,17 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![image](https://github.com/user-attachments/assets/87a3d1b2-90ff-4140-bd69-f101883fbc9b)
+https://github.com/user-attachments/assets/9369991e-ff8b-4cd8-8492-da8a0d6fd6fa
 
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+
+GIF created with macOS screen recording (Shift + Command + 5)
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+No issues encountered 
 
 ## License
 
