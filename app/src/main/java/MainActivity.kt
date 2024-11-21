@@ -16,9 +16,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var G2C: TextView
     private lateinit var G3: TextView
     private lateinit var G3C: TextView
-    private lateinit var guessInputEditTexT: EditText
+    private lateinit var correctWordTextView: TextView
+    private lateinit var guessEntry: EditText
     private lateinit var guessButton: Button
-    private lateinit var restButton:Button
 
     private var targetWord: String = FourLetterWordList.getRandomFourLetterWord()
     private var guessCount = 0
@@ -33,31 +33,27 @@ class MainActivity : AppCompatActivity() {
         G2C = findViewById(R.id.G2C)
         G3 = findViewById(R.id.G3)
         G3C = findViewById(R.id.G3C)
-        guessInputEditTexT = findViewById(R.id.guessEntry)
-
+        correctWordTextView = findViewById(R.id.correctword)
+        guessEntry = findViewById(R.id.guessEntry)
         guessButton = findViewById(R.id.button2)
-        val resetButton: Button = findViewById(R.id.buttonReset)
+
+        correctWordTextView.visibility = View.GONE
 
         guessButton.setOnClickListener {
             handleGuess()
         }
-        restButton.setOnClickListener() {
-            resetGame()
-        }
     }
-    
-    private fun handleGuess () {
 
-        val guess = guessInputEditText.text.toString().uppercase()
-            
-        if(guess.length != 4) {
-            println("Invalid guess length. Your guess is: $guess")
+    private fun handleGuess() {
+        val guess = guessEntry.text.toString().uppercase()
+
+
+        if (guess.length != 4) {
+            guessEntry.error = "Guess must be 4 letters!"
             return
-
-            println("Your guess is: $guess")
         }
-            
-        when(guessCount) {
+
+        when (guessCount) {
             0 -> {
                 G1.text = guess
                 G1C.text = checkGuess(guess)
@@ -69,44 +65,28 @@ class MainActivity : AppCompatActivity() {
             2 -> {
                 G3.text = guess
                 G3C.text = checkGuess(guess)
+                correctWordTextView.text = "The correct word was: $targetWord"
+                correctWordTextView.visibility = View.VISIBLE
                 guessButton.isEnabled = false
-                restButton.visibility = Button.VISIBLE
             }
         }
 
         guessCount++
-    }
-
-    private fun resetGame() {
-        targetWord = FourLetterWordList.getRandomFourLetterWord()
-        guessCount = 0
-
-        G1.text = "Guess 1"
-        G1C.text = "Guess 1 Check"
-        G2.text = "Guess 2"
-        G2.text = "Guess 2 Check"
-        G3.text = "Guess 3"
-        G3C.text = "Guess 3 Check"
-
-
-        guessButton.isEnabled = true
-        val resetButton = null
-        resetButton.visibility  = View.GONE
+        guessEntry.text.clear()
     }
 
     private fun checkGuess(guess: String): String {
-        val result = StringBuilder()
+        var correctCount = 0
+        var inPositionCount = 0
 
-        for (i in 0 until 4) {
-            if (guess [i] == targetWord[i]) {
-                result.append('0')
+        for (i in guess.indices) {
+            if (guess[i] == targetWord[i]) {
+                inPositionCount++
             } else if (targetWord.contains(guess[i])) {
-                result.append('+')
-            } else {
-                result.append('X')
+                correctCount++
             }
         }
 
-        return result.toString()
+        return "In position: $inPositionCount, Correct letters: $correctCount"
     }
 }
